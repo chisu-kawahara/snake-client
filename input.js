@@ -11,7 +11,17 @@ const handleUserInput = function (key) {
   // code handling the key press will go here
   if (key === '\u0003') { // Ctrl+C
     process.exit();
+  if (key === 'w') {
+      connection.write("Move: up");
+
+    }
   }
+};
+
+let connection;
+
+const setupInput = (conn) => {
+  connection = conn;
 };
 
 module.exports = { setupInput }; // Export the setupInput function
