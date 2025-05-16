@@ -17,6 +17,9 @@ const connect = function () {
 
     // Send name to the server
     conn.write("Name: ABC"); // Replace "ABC" with your initials
+
+    //conn.write("Move: up");
+
   });
 
   return conn;
