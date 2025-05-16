@@ -1,9 +1,3 @@
-const { connect } = require("./client");
-const { setupInput } = require("./input");
-// establishes a connection with the game server
-
-// setup interface to handle user input from stdin
-
 const setupInput = function () {
   const stdin = process.stdin;
   stdin.setRawMode(true); // Set raw mode to true to receive input as it is typed
@@ -19,6 +13,5 @@ const handleUserInput = function (key) {
     process.exit();
   }
 };
-console.log("Connecting ...");
-connect();
-setupInput();
+
+module.exports = { setupInput }; // Export the setupInput function
