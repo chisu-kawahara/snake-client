@@ -11,8 +11,12 @@ const connect = function () {
   conn.setEncoding("utf8");
 
   // Handle incoming messages from server
-  conn.on("data", (data) => {
-    console.log("Server says:", data);
+
+  conn.on('connect', () => {
+    console.log("Successfully connected to game server");
+
+    // Send name to the server
+    conn.write("Name: ABC"); // Replace "ABC" with your initials
   });
 
   return conn;
